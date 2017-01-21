@@ -5,15 +5,25 @@ using UnityEngine;
 public class Health : MonoBehaviour {
 
 	public int maxHealth;
+    private int spriteNum = 0;
+    public Sprite[] sprites;
     
     
     public void ApplyDamage()
     {
         maxHealth--;
 
-        if(maxHealth <= 0)
+        //TODO: switch sprites
+
+
+        if (maxHealth <= 0)
         {
             Destroy(gameObject);
+        }
+        else
+        {
+            this.GetComponent<SpriteRenderer>().sprite = sprites[spriteNum];
+            spriteNum++;
         }
     }
 }

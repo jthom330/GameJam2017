@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class Sticky : MonoBehaviour {
 
-    float oldDrag;
-    float oldAngDrag;
-
     void OnCollisionStay2D(Collision2D other)
     {
 
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        oldDrag = rb.drag;
-        oldAngDrag = rb.angularDrag;
-
+     
         rb.drag = 25;
         rb.angularDrag = 25;
     }

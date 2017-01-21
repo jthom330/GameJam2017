@@ -14,16 +14,13 @@ public class DragAndDrop : MonoBehaviour {
     }
 
 
-    bool selected = false;
     Vector2 mouseVel;
     
 
     private void OnMouseDown()
     {
-        grav = objRB.gravityScale;
+       grav = objRB.gravityScale;
        objRB.gravityScale = 0;
-                    
-
     }
 
     private void OnMouseDrag()
@@ -35,13 +32,15 @@ public class DragAndDrop : MonoBehaviour {
 
     private void OnMouseUp()
     {
+        objRB.gravityScale = grav;
         Vector3 MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        Vector2 dir = MousePos - transform.position;
+        Vector2 dir = (MousePos - transform.position)/5;
 
-        dir.Normalize();
+        Debug.Log(dir);
 
-        objRB.gravityScale = grav;
-        objRB.velocity = new Vector2(objRB.velocity.x + dir.x * 10f, objRB.velocity.y + dir.y * 10f);
+        objRB.velocity = new Vector2(objRB.velocity.x + dir.x * 100f, objRB.velocity.y + dir.y * 100f);
+        
+        
     }
 }
