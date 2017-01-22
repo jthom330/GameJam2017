@@ -75,12 +75,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\scripts\Bounce.cs" />
     <Compile Include="Assets\scripts\CameraControls.cs" />
     <Compile Include="Assets\scripts\DragAndDrop.cs" />
     <Compile Include="Assets\scripts\Health.cs" />
+    <Compile Include="Assets\scripts\IgnoreBlock.cs" />
     <Compile Include="Assets\scripts\ResourceVariables.cs" />
+    <Compile Include="Assets\scripts\SoundsEffects.cs" />
     <Compile Include="Assets\scripts\Sticky.cs" />
     <Compile Include="Assets\scripts\WaveCollision.cs" />
+    <Compile Include="Assets\scripts\WaveSpawn.cs" />
     <Compile Include="Assets\scripts\thrallLogic.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
